@@ -1,0 +1,178 @@
+body {
+    font-family: 'Times New Roman', Times, serif;
+    margin: 0;
+    padding: 0;
+}
+
+/* Fullscreen video background */
+#video-background {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1; /* Send behind other elements */
+}
+
+.rounded-circle {
+    width: 200px; /* Lebar maksimum */
+    height: 200px; /* Tinggi maksimum */
+    object-fit: cover; /* Menjaga rasio gambar */
+    cursor: pointer;
+}
+
+/* Popup Styling */
+.popup {
+    display: none;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgb(245, 245, 246);
+    border-radius: 10px;
+    padding: 20px;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.3);
+    z-index: 1000;
+    text-align: center;
+    animation: popupOpen 0.3s ease-in-out;
+    width: 90%;
+    max-width: 400px;
+}
+
+.popup img {
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.overlay {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+@keyframes popupOpen {
+    from {
+        transform: translate(-50%, -50%) scale(0.7);
+        opacity: 0;
+    }
+    to {
+        transform: translate(-50%, -50%) scale(1);
+        opacity: 1;
+    }
+}
+
+/* Triangle layout for photos */
+.triangle-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    margin-top: 50px;
+}
+
+.triangle-row {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+/* Rotating text styling */
+#rotating-text {
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 30px;
+    color: #0b2093;
+}
+
+/* Scrolling text animation */
+.scrolling-text {
+    display: inline-block;
+    position: relative;
+    white-space: nowrap;
+    overflow: hidden;
+    font-size: 2rem;
+    font-weight: bold;
+    color: #fefefe;
+    text-shadow: 2px 2px 5px #020d37;
+}
+
+.scrolling-text span {
+    display: inline-block;
+    position: relative;
+    animation: scrollText 5s linear infinite;
+}
+
+@keyframes scrollText {
+    from {
+        transform: translateX(100%);
+    }
+    to {
+        transform: translateX(-100%);
+    }
+}
+
+/* Navbar tetap di atas */
+.navbar {
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    z-index: 1030; /* Tetap di atas elemen lainnya */
+}
+
+/* Tambahkan margin untuk menghindari konten tertutup navbar */
+.content {
+    margin-top: 70px; /* Tinggi navbar */
+}
+
+footer {
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    background-color: rgba(255, 255, 255, 0);
+    text-align: center;
+    font-size: 17px;
+    font-weight: bold;
+    padding: 10px;
+}
+/* Styling logo di pojok kiri atas */
+.top-left-container {
+    display: flex; /* Menyelaraskan logo secara horizontal */
+    align-items: center; /* Menyelaraskan secara vertikal */
+    gap: 10px; /* Jarak antar logo */
+}
+
+.logo {
+    height: 50px; /* Ukuran default untuk logo */
+    width: auto;
+}
+
+.logo.large {
+    height: 80px; /* Logo lgumm lebih besar */
+}
+
+/* Styling navbar */
+.navbar {
+    padding: 10px 20px; /* Menambahkan padding agar navigasi terlihat proporsional */
+}
+
+.navbar-nav {
+    display: flex; /* Membuat item navigasi sejajar secara horizontal */
+    align-items: center; /* Menyelaraskan item dengan logo */
+}
+
+.nav-item-text {
+    font-size: 18px; /* Menyesuaikan ukuran teks navigasi agar proporsional dengan logo */
+    color: white; /* Warna teks */
+    padding: 8px 15px; /* Padding untuk membuat area klik lebih besar */
+    text-decoration: none; /* Menghilangkan garis bawah */
+}
+
+.nav-item-text:hover {
+    color: #f0ad4e; /* Warna hover */
+    text-decoration: underline;
+}
